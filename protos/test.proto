@@ -1,0 +1,48 @@
+
+syntax = "proto3";
+
+
+package grpc_test;
+
+service Transit{
+    rpc GetString(emptyparameter) returns (StringReply) {}
+    
+    rpc GetNum(NumRequest) returns (NumReply) {}
+    
+    rpc GetList(indexquery) returns (ListReply) {}
+}
+
+message emptyparameter{
+  string something = 1;
+}
+
+
+// The response message containing the greetings
+message StringReply {
+  string message = 1;
+}
+
+message NumRequest {
+  float x1 = 1;
+  float x2 = 2;
+}
+
+message NumReply {
+  float y = 1;
+}
+
+message indexquery {
+  int32 ind = 1;
+}
+
+
+message ListReply {
+    repeated float ListReply = 1;
+}
+
+
+
+
+
+
+
